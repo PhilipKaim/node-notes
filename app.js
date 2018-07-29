@@ -13,9 +13,18 @@ console.log(argv);
 
 
 if (command === 'add') {    
-    notes.addNote(argv.title, argv.body);
+    var added = notes.addNote(argv.title, argv.body);
+
+    if (added) {
+        console.log('NOTE ADDED!');
+    } else {
+        console.log('NOTE ALREADY EXISTS!');
+    }
+
 } else if (command === 'remove') {
-    notes.removeNote(argv.title);
+    var removed = notes.removeNote(argv.title);
+    var message = removed ? 'NOTE REMOVED!' : 'NOTE DOES NOT EXIST!';
+    console.log(message);
 } else if (command === 'list') {
     notes.getAll(argv.title, argv.body);
 } else if (command === 'read') {
