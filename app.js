@@ -22,10 +22,10 @@ var argv = yargs
     })
     .command('list', 'lists all notes')
     .command('read', 'read a note', {
-        TITLE_OPTIONS
+        title: TITLE_OPTIONS
     })
     .command('remove', 'remove a note', {
-        TITLE_OPTIONS
+        title: TITLE_OPTIONS
     })
     .help()
     .argv;
